@@ -1,0 +1,44 @@
+$galleryHeight: calc(100vh - 160px);
+
+.gallery {
+  width: 100%;
+  max-height: 100%;
+
+  &-container {
+    width: 100%;
+    height: $galleryHeight;
+    overflow-x: auto;
+    position: relative;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    display: flex;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 100%;
+      height: $galleryHeight;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      background: url('/loading.gif') center center no-repeat;
+      background-size: 50px 50px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
+  }
+}
+
+.navigation {
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
