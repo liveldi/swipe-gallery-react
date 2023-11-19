@@ -4,6 +4,7 @@ import { Button } from '../Button';
 import { Counter } from '../Counter';
 
 import { useUpdateActiveIndex } from './hooks/useUpdateActiveIndex';
+import { useKeysEvents } from './hooks/useKeyEvents';
 
 import './index.scss';
 
@@ -42,6 +43,15 @@ export const SwipeGallery = ({ images }: SwipeGalleryProps) => {
       behavior: 'smooth',
     })
   }
+
+  useKeysEvents((key) => {
+    if (key === 'ArrowLeft') {
+      move(decreaseIndex(activeIndex));
+    }
+    if (key === 'ArrowRight') {
+      move(increaseIndex(activeIndex, images.length));
+    }
+  });
 
   const isLoaded = (index: number) => (
     activeIndex - 1 === index

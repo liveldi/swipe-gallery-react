@@ -12,6 +12,7 @@ $galleryHeight: calc(100vh - 160px);
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
     display: flex;
+    min-height: 300px;
 
     &::-webkit-scrollbar {
       display: none;
@@ -23,6 +24,7 @@ $galleryHeight: calc(100vh - 160px);
       justify-content: center;
       min-width: 100%;
       height: $galleryHeight;
+      min-height: 300px;
       scroll-snap-align: start;
       scroll-snap-stop: always;
       background: url('/loading.gif') center center no-repeat;
